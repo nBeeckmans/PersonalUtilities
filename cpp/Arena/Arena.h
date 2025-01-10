@@ -26,7 +26,7 @@ public:
        std::copy(arena.pool, arena.pool + SIZE, this->pool);
     }
 
-    Arena(Arena&& arena) noexcept : pool(std::exchange(arena.pool, nullptr)) {
+    Arena(Arena&& arena) noexcept : pool(std::exchange(arena.pool, nullptr)), position(arena.position) {
     }
 
     Arena& operator=(Arena&& arena) noexcept {
